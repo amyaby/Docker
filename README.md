@@ -13,10 +13,10 @@ This is one of the powers of Docker: consistency across environments.
 On **Debian-based systems** (like Debian or Ubuntu), the cowsay package installs its executable in `/usr/games/` by default.  
 However, this directory might be empty on your host machine (your Ubuntu laptop) because:
   
--> You haven’t installed cowsay directly on your laptop.
--> The `/usr/games` directory inside the Docker container is separate from your host machine’s `/usr/games`.
--> The cowsay package is installed inside the container, not on your laptop.
--> The executable will be placed in `/usr/games/cowsay `inside the container.
+-> You haven’t installed cowsay directly on your laptop.  
+-> The `/usr/games` directory inside the Docker container is separate from your host machine’s `/usr/games`.  
+-> The cowsay package is installed inside the container, not on your laptop.  
+-> The executable will be placed in `/usr/games/cowsay `inside the container.  
   
   ------
 
