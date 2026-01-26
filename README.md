@@ -1,4 +1,14 @@
 # LAB1: COWSAY
+## Lab Exercise: Create a Custom Docker Image
+### Overview
+In this lab, you are required to write a Dockerfile that will create a custom image with the following specifications:  
+`Dockerfile Requirements:  `  
+
+* Use debian:12 as the base image.
+* Update packages and install cowsay.
+* Configure CMD to start from the cowsay utility in /usr/games/cowsay.
+* Pass the arguments: "Cow says docker is awesome!".  
+------
 
 ## NOTES:  
 **Docker containers** are isolated environments. The base image you choose (e.g., debian, ubuntu, alpine) runs inside the container, not on your host machine (your Ubuntu laptop).
@@ -26,7 +36,8 @@ However, this directory might be empty on your host machine (your Ubuntu laptop)
 ```shell
 docker build -t cowsay-image .
 ```
-3-create a container instance from ur image(cowsay-image)
+3-create a container instance from ur image[run image(cowsay-image) as container]  
+  
 ```shell
 docker run cowsay-image
 ```
