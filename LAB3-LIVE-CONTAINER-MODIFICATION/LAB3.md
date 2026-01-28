@@ -1,16 +1,35 @@
-### **Lab: Live Container Modification**
+### **Docker**
 
-#### **Overview**
+#### **Lab: Live Container Modification**
+Edit a running container and verify the changes
+
+---
+
+### **Overview**
+In this lab, you are required to follow the same steps that we previously discussed but with the caveat that you will open an interactive session to a container running in detached mode and modify the index.html page and then see if the changes are reflected in the live browser session.
+
+---
+
+### **Steps required:**
+
+1. Pull/download the nginx web server image (image name nginx) if you don't have it.
+2. Create and start a container called `nginxwebserver` in detached mode with port forwarding 8080:80.
+3. Open the nginx server in browser `http://localhost:8080`.
+4. Now open an interactive bash shell session with the running container.
+5. On the bash shell within the container run the command `apt-get update`.
+6. Once updated, install the vim package using `apt-get install vim -y`.
+7. Edit the file `/usr/share/nginx/html/index.html` using the vim editor and change the welcome message from "Welcome to nginx!" -> "Welcome to My Cool nginx!" (Escape :wq saves the file and quits).
+8. Now refresh the browser to see if it shows the updated message.  
+
+---
+
+
+### **Steps Required:**
 In this lab, you will modify a running Nginx container in real-time. Here’s what you’ll do:
 - Start an Nginx container in detached mode.
 - Open an interactive session inside the running container.
 - Modify the `index.html` file inside the container.
-- Verify the changes in your browser immediately.
-
----
-
-### **Steps Required:**
-
+- Verify the changes in your browser immediately.  
 #### **Step 1: Pull the Nginx Image**
 - You need the Nginx image to create a container. If you don’t have it locally, Docker will pull it from Docker Hub.  
 - Pull the Nginx web server image from Docker Hub if you don’t already have it.
