@@ -70,12 +70,12 @@ If port 80 is already in use, you’ll see an error like:
 ```
 Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint <container_name>: address already in use.
 ```
-![alt text](image.png)
+![alt text](LAB2-images/image.png)
 ### **Solutions:**
 When you tried to run an Nginx container on **port 80**, you might have encountered an error because port 80 was already in use by another service (like Apache or another Nginx container).
 
 Even though the container failed to start, Docker still **created the container** with the name `c-webservernginx`. This means you need to **delete the failed container** before creating a new one.
-![alt text](image-1.png)
+![alt text](LAB2-images/image-1.png)
 1. **Use a Different Port (e.g., 8080)**:
    ```bash
    docker run -d --name my-nginx -p 8080:80 nginx
@@ -109,31 +109,31 @@ docker pull nginx
 ```bash
 docker run -d --name my-nginx(container's name) -p 8080:80 nginx(image)
 ```
-![alt text](image-3.png)
+![alt text](LAB2-images/image-3.png)
 
 ### **Check Running Containers**
 ```bash
 docker ps
 ```
-![alt text](image-2.png)
+![alt text](LAB2-images/image-2.png)
 ### **View Container Logs**
 ```bash
 docker logs my-nginx
 ```
 ### **List Processes Running in the Container**
-![alt text](image-6.png)
+![alt text](LAB2-images/image-6.png)
 ### **Access Nginx in Your Browser**
 Open your browser and go to:
 - [http://localhost:8080](http://localhost:8080) (if using port 8080)
 - [http://localhost](http://localhost) (if using port 80)
-![alt text](image-4.png)
+![alt text](LAB2-images/image-4.png)
 
 ### **Stop the Container**
 `If the container is stopped, it won’t appear in the list. Use docker ps -a to see all containers, including stopped ones.`  
 ```bash
 docker stop my-nginx
 ```
-![alt text](image-5.png)
+![alt text](LAB2-images/image-5.png)
 ### **Remove the Container**
 ```bash
 docker rm my-nginx
