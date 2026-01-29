@@ -73,7 +73,7 @@ App/
    ```
    - `-t mynode-app` tags the image with the name `mynode-app`.
    - `.` tells Docker to use the current directory as the build context.
-![alt text](image.png)
+![alt text](images/image.png)
 
 ---
 
@@ -83,7 +83,7 @@ Check that the image was created successfully:
 docker images
 ```
 You should see `mynode-app` listed among the images.
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 ---
 
@@ -97,7 +97,7 @@ You should see `mynode-app` listed among the images.
    - `--name mynode-app-container` gives the container a name.
    - `-p 2000:3000` maps port 2000 on your machine to port 3000 in the container.  
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 ---
 
@@ -107,7 +107,7 @@ Check that the container is running:
 docker ps
 ```
 You should see `mynode-app-container` listed with the status `Up`.  
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 ---
 
@@ -117,7 +117,7 @@ Open your browser and go to:
 http://localhost:2000
 ```
 You should see your Node.js app running.  
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 
 ---
 
@@ -145,7 +145,7 @@ docker rmi mynode-app
 
 ---
 ## Step 9: Check Container Logs
-![alt text](image-5.png)  
+![alt text](images/image-5.png)  
 
 Docker shows you the logs (output) from the container named mynode-app-container.  
 
