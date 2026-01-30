@@ -1,6 +1,6 @@
 # Docker Networking: Container Communication
 
-![alt text](image.png)
+![alt text](images/image.png)
 ---
 
 ## **Introduction**
@@ -15,8 +15,8 @@ This guide explains how Docker networking works, focusing on the default bridge 
 - **IP Address Range**: `172.17.0.0/16`.
   - Containers on this network get IP addresses like `172.17.0.2`, `172.17.0.3`, etc.
   - The IP address `172.17.0.1` is reserved for the `docker0` bridge, which acts as a gateway for container traffic.
-  ![alt text](image-1.png)
-  ![alt text](image-2.png)
+  ![alt text](images/image-1.png)
+  ![alt text](images/image-2.png)
 
 ### **2. Network Isolation**
 - Containers on the default bridge network are isolated from external systems by default.
@@ -35,8 +35,8 @@ Ensure you have the Nginx image:
 ```bash
 docker pull nginx
 ```
-![alt text](image-5.png)
-![alt text](image-4.png)
+![alt text](images/image-5.png)
+![alt text](images/image-4.png)
 
 
 ---
@@ -52,15 +52,15 @@ docker pull nginx
    docker run -d --name nginx2 nginx
    ```
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 ---
 
 ### **Step 3: Find the IP Addresses of the Containers**
 1. list the containers:
-    ![alt text](image-6.png)
+    ![alt text](images/image-6.png)
 
 2. Get the IP address of ` container-nginx2`:
-![alt text](image-7.png)
+![alt text](images/image-7.png)
    ```bash
    docker inspect bfbaa986003a
    ```
@@ -77,13 +77,13 @@ docker pull nginx
    ```bash
    apt-get update && apt-get install -y iputils-ping
    ```
-![alt text](image-8.png)
+![alt text](images/image-8.png)
 3. Test communication with `container-nginx1`:
    ```bash
    ping 172.17.0.2
    ```
    - You should see responses from `nginx1`, confirming that the containers can communicate.
-![alt text](image-9.png)
+![alt text](images/image-9.png)
 ---
 
 ### **Step 5: Exit the Container**
