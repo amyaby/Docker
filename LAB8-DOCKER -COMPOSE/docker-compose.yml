@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx:latest
+    container_name: web-container
+    hostname: webserver
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+
+  db:
+    image: postgres:15
+    container_name: db-container
+    hostname: database
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mysecretpassword
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
