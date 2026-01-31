@@ -1,4 +1,4 @@
-![alt text](images/imagee.png)
+![alt text](images/image.png)
 # Docker Compose: Container Communication and Port Forwarding
 
 ## **Introduction to Docker Compose**
@@ -34,7 +34,7 @@ Run the following command to start your containers in detached mode:
 ```bash
 docker compose up -d
 ```
-![alt text](images/image.png)
+![alt text](images/imagee.png)
 
 - **Explanation:** This command reads your `docker-compose.yml` file and starts all services defined in it.
 - **Containers:** `web-container` and `web-container-2` are created and attached to the `app-network`.
