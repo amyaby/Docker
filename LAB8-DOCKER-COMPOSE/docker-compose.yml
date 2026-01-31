@@ -1,0 +1,31 @@
+services:
+  web:
+    image: nginx:latest
+    container_name: web-container
+    hostname: webserver
+    ports:
+      - "8080:80"
+    networks:
+      - app-network  # Changed from my-network to app-network
+
+  web-2:
+    image: nginx:latest
+    container_name: web-container-2
+    hostname: webserver
+    ports:
+      - "8081:80"
+    networks:
+      - app-network  # Changed from my-network to app-network
+
+  db:
+    image: mysql:8
+    container_name: db-container
+    hostname: database
+    environment:
+      - MYSQL_ROOT_PASSWORD=mypassword
+    networks:
+      - app-network  # Changed from my-network to app-network
+
+networks:
+  app-network:
+    driver: bridge
